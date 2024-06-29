@@ -1,17 +1,17 @@
-extends Node2D
+extends CharacterBody2D
 
 var speed: float = 500
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	
 	# movement input
 	var direction: Vector2 = Input.get_vector("left", "right","up","down")
-	self.position += direction * speed * delta
+	self.velocity = direction * speed
+	self.move_and_slide()
 	
 	# shoot laser input
 	if Input.is_action_pressed("primary action"):
 		print("shoot laser")
-		$"..".rotate_logo()
 	
 	# shoot gernade input
 	if Input.is_action_pressed("secondary action"):
