@@ -4,7 +4,9 @@ var test_array: Array[String] = ["string", "hello", "stuff"]
 
 func _ready():
 	$Logo.rotation_degrees = 90
-	return
+	
+	#for i in test_array:
+		#print(i)
 
 func _process(delta: float):
 	$Logo.rotation_degrees += 200 * delta
