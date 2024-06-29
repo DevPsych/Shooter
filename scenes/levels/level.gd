@@ -9,7 +9,10 @@ func _ready():
 		#print(i)
 
 func _process(delta: float):
-	$Logo.rotation_degrees += 200 * delta
+	#$Logo.rotation_degrees += 200 * delta
 
 	if $Logo.position.x > 1000:
 		$Logo.pos.x = 0
+
+func rotate_logo():
+	$Logo.rotation_degrees += 90
