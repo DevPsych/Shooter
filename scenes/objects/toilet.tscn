@@ -6,6 +6,8 @@
 size = Vector2(236, 250)
 
 [node name="Toilet" type="StaticBody2D"]
+collision_layer = 4
+collision_mask = 11
 
 [node name="ToiletSprite" type="Sprite2D" parent="."]
 texture = ExtResource("1_msv0q")
