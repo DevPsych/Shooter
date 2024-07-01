@@ -30,6 +30,7 @@ func _process(_delta: float) -> void:
 		var facing_direction = (get_global_mouse_position() - self.position).normalized()
 		can_laser = false
 		$LaserTimer.start()
+		$GPUParticles2D.emitting = true
 		laser.emit(selected_laser.global_position, facing_direction)
 	
 	# shoot grenade input
