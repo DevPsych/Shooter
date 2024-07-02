@@ -97,6 +97,7 @@ rotation = -1.58215
 
 [node name="Gate" parent="." instance=ExtResource("2_v1mne")]
 position = Vector2(499, -544)
+metadata/_edit_lock_ = true
 
 [node name="Player" parent="." instance=ExtResource("4_7c6nt")]
 position = Vector2(483, 540)
@@ -106,6 +107,7 @@ zoom = Vector2(0.6, 0.6)
 position_smoothing_enabled = true
 
 [node name="Projectiles" type="Node2D" parent="."]
+metadata/_edit_lock_ = true
 
 [connection signal="player_entered_gate" from="Gate" to="." method="_on_gate_player_entered_gate"]
 [connection signal="grenade" from="Player" to="." method="_on_player_grenade"]

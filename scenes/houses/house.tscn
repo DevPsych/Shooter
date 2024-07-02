@@ -1,8 +1,9 @@
-[gd_scene load_steps=35 format=3 uid="uid://b1wj2o6ouhsi3"]
+[gd_scene load_steps=36 format=3 uid="uid://b1wj2o6ouhsi3"]
 
 [ext_resource type="Texture2D" uid="uid://ctq3sicribjtf" path="res://graphics/tilesets/interior.png" id="1_voe6s"]
 [ext_resource type="PackedScene" uid="uid://cx4f5b35tummq" path="res://scenes/objects/simple_light.tscn" id="2_oa7p6"]
 [ext_resource type="PackedScene" uid="uid://dfcbdc8lfcumh" path="res://scenes/objects/wall_lamp.tscn" id="3_6a6tn"]
+[ext_resource type="PackedScene" uid="uid://0ux81m8qphl7" path="res://scenes/objects/light_fan_animation.tscn" id="4_iflyq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h4yru"]
 size = Vector2(2864, 2092)
@@ -323,3 +324,20 @@ metadata/_edit_lock_ = true
 [node name="WallLamp2" parent="." instance=ExtResource("3_6a6tn")]
 position = Vector2(1260, 201)
 rotation = -1.5708
+metadata/_edit_lock_ = true
+
+[node name="LightFanAnimation" parent="." instance=ExtResource("4_iflyq")]
+position = Vector2(604, 408)
+metadata/_edit_lock_ = true
+
+[node name="LightFanAnimation3" parent="." instance=ExtResource("4_iflyq")]
+position = Vector2(-768, -552)
+metadata/_edit_lock_ = true
+
+[node name="LightFanAnimation4" parent="." instance=ExtResource("4_iflyq")]
+position = Vector2(-768, 408)
+metadata/_edit_lock_ = true
+
+[node name="LightFanAnimation2" parent="." instance=ExtResource("4_iflyq")]
+position = Vector2(580, -372)
+metadata/_edit_lock_ = true
