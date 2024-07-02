@@ -91,7 +91,7 @@ texture = ExtResource("9_sgl1c")
 [node name="SteamVent" parent="Ground" instance=ExtResource("10_wxkfa")]
 position = Vector2(-1162, 1416)
 
-[node name="House" parent="." instance=ExtResource("12_lje7x")]
+[node name="House" parent="Ground" instance=ExtResource("12_lje7x")]
 position = Vector2(-2711, 1989)
 rotation = -1.58215
 
@@ -103,12 +103,15 @@ metadata/_edit_lock_ = true
 position = Vector2(483, 540)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
+unique_name_in_owner = true
 zoom = Vector2(0.6, 0.6)
 position_smoothing_enabled = true
 
 [node name="Projectiles" type="Node2D" parent="."]
 metadata/_edit_lock_ = true
 
+[connection signal="player_entered" from="Ground/House" to="." method="_on_house_player_entered"]
+[connection signal="player_exited" from="Ground/House" to="." method="_on_house_player_exited"]
 [connection signal="player_entered_gate" from="Gate" to="." method="_on_gate_player_entered_gate"]
 [connection signal="grenade" from="Player" to="." method="_on_player_grenade"]
 [connection signal="laser" from="Player" to="." method="_on_player_laser"]
