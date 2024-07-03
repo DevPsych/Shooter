@@ -16,3 +16,7 @@ func _on_player_grenade(pos, direction) -> void:
 	grenade.position = pos
 	grenade.linear_velocity = direction * grenade.speed
 	$Projectiles.add_child(grenade)
+
+func tween_stop_player():
+	var tween = create_tween()
+	tween.tween_property($Player,"speed",0,0.5)

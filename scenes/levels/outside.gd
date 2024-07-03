@@ -1,8 +1,7 @@
 extends LevelParent
 
-func _on_gate_player_entered_gate(body: Node2D) -> void:
-	var tween = create_tween()
-	tween.tween_property($Player,"speed",0,0.5)
+func _on_gate_player_entered_gate(_body: Node2D) -> void:
+	self.tween_stop_player()
 
 func _on_house_player_entered() -> void:
 	var tween = get_tree().create_tween()
