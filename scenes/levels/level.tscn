@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://cvte0hnvbr30"]
+[gd_scene load_steps=18 format=3 uid="uid://cvte0hnvbr30"]
 
 [ext_resource type="Script" path="res://scenes/levels/level.gd" id="1_aj50c"]
 [ext_resource type="Texture2D" uid="uid://b7b3u7ffn5rm6" path="res://graphics/ground/stones.png" id="2_retpm"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://cecastcttkk8b" path="res://graphics/decals/moss/moss_5.png" id="9_sgl1c"]
 [ext_resource type="PackedScene" uid="uid://c6j43yr0kfpfi" path="res://scenes/objects/steam_vent.tscn" id="10_wxkfa"]
 [ext_resource type="PackedScene" uid="uid://b1wj2o6ouhsi3" path="res://scenes/houses/house.tscn" id="12_lje7x"]
+[ext_resource type="PackedScene" uid="uid://cdyet4fwd4rra" path="res://scenes/enemies/drone.tscn" id="14_my62t"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_i4pkk"]
 resource_name = "Soil"
@@ -109,6 +110,9 @@ position_smoothing_enabled = true
 
 [node name="Projectiles" type="Node2D" parent="."]
 metadata/_edit_lock_ = true
+
+[node name="Drone" parent="." instance=ExtResource("14_my62t")]
+position = Vector2(211, 940)
 
 [connection signal="player_entered" from="Ground/House" to="." method="_on_house_player_entered"]
 [connection signal="player_exited" from="Ground/House" to="." method="_on_house_player_exited"]
