@@ -1,0 +1,19 @@
+[gd_scene load_steps=5 format=3 uid="uid://cewv13fhue5ad"]
+
+[ext_resource type="PackedScene" uid="uid://cvte0hnvbr30" path="res://scenes/levels/level.tscn" id="1_ffln2"]
+[ext_resource type="Script" path="res://scenes/levels/inside.gd" id="2_qppdw"]
+[ext_resource type="PackedScene" uid="uid://cfh0ytwgfd4af" path="res://scenes/objects/toilet.tscn" id="3_lhn53"]
+[ext_resource type="PackedScene" uid="uid://b6wvxic7k0658" path="res://scenes/objects/box.tscn" id="4_o3wk7"]
+
+[node name="Inside" instance=ExtResource("1_ffln2")]
+script = ExtResource("2_qppdw")
+
+[node name="Toilet" parent="." index="3" instance=ExtResource("3_lhn53")]
+position = Vector2(698, 208)
+collision_layer = 1
+collision_mask = 1
+
+[node name="Box" parent="." index="4" instance=ExtResource("4_o3wk7")]
+position = Vector2(279, 216)
+collision_layer = 1
+collision_mask = 1
