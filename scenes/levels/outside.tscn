@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://bywllwdkhdygb"]
+[gd_scene load_steps=18 format=3 uid="uid://bywllwdkhdygb"]
 
 [ext_resource type="PackedScene" uid="uid://cvte0hnvbr30" path="res://scenes/levels/level.tscn" id="1_c1njk"]
 [ext_resource type="Script" path="res://scenes/levels/outside.gd" id="2_evuyf"]
@@ -13,8 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://c6j43yr0kfpfi" path="res://scenes/objects/steam_vent.tscn" id="10_cevre"]
 [ext_resource type="PackedScene" uid="uid://b1wj2o6ouhsi3" path="res://scenes/houses/house.tscn" id="11_g3g5r"]
 [ext_resource type="PackedScene" uid="uid://bxoecq5f105ql" path="res://scenes/objects/gate.tscn" id="12_yil1p"]
-[ext_resource type="PackedScene" uid="uid://b6wvxic7k0658" path="res://scenes/objects/box.tscn" id="14_10atn"]
-[ext_resource type="PackedScene" uid="uid://cfh0ytwgfd4af" path="res://scenes/objects/toilet.tscn" id="15_p5m3j"]
+[ext_resource type="PackedScene" uid="uid://bdv30d6l7tnoy" path="res://scenes/enemies/scout.tscn" id="14_0ck26"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_i4pkk"]
 resource_name = "Soil"
@@ -98,19 +97,8 @@ texture = ExtResource("9_kq2jw")
 [node name="SteamVent" parent="Objects" index="0" instance=ExtResource("10_cevre")]
 position = Vector2(-1162, 1416)
 
-[node name="Box" parent="Containers" index="0" instance=ExtResource("14_10atn")]
-position = Vector2(1035, 571)
-
-[node name="Toilet" parent="Containers" index="1" instance=ExtResource("15_p5m3j")]
-position = Vector2(-328, 716)
-rotation = 4.71239
-
-[node name="Toilet2" parent="Containers" index="2" instance=ExtResource("15_p5m3j")]
-position = Vector2(-51, 1027)
-
-[node name="Toilet3" parent="Containers" index="3" instance=ExtResource("15_p5m3j")]
-position = Vector2(897, 1095)
-rotation = 3.14159
+[node name="Scout" parent="Enemies" index="0" instance=ExtResource("14_0ck26")]
+position = Vector2(1770, 1437)
 
 [connection signal="player_entered" from="Ground/House" to="." method="_on_house_player_entered"]
 [connection signal="player_exited" from="Ground/House" to="." method="_on_house_player_exited"]

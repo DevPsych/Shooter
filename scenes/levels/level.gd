@@ -7,15 +7,23 @@ const ITEM_SCENE: PackedScene = preload("res://scenes/items/item.tscn")
 
 func _ready():
 	for container in get_tree().get_nodes_in_group("containers"):
-		container.connect("open",on_container_open)
+		container.connect("open",_on_container_open)
+	for scout in get_tree().get_nodes_in_group("scouts"):
+		scout.connect("laser",_on_scout_laser)
 		
-func on_container_open(pos, direction) -> void:
+func _on_container_open(pos, direction) -> void:
 	var item = ITEM_SCENE.instantiate() as Area2D
 	item.position = pos
 	item.direction = direction
 	$Items.call_deferred("add_child",item)
 
 func _on_player_laser(pos, direction) -> void:
+	instantiate_laser(pos, direction)
+	
+func _on_scout_laser(pos, direction) -> void:
+	instantiate_laser(pos, direction)
+
+func instantiate_laser(pos, direction) -> void:
 	var laser = LASER_SCENE.instantiate() as Area2D
 	laser.position = pos
 	laser.rotation = direction.angle()

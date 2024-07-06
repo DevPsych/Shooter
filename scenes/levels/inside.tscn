@@ -494,12 +494,17 @@ collision_mask = 11
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Infestations/StaticBody2D8" index="0"]
 polygon = PackedVector2Array(-3683, -5573, -3695, -5542, -3702, -5504, -3681, -5489, -3632, -5477, -3627, -5451, -3607, -5433, -3589, -5433, -3575, -5386, -3567, -5348, -3560, -5332, -3534, -5331, -3532, -5342, -3509, -5330, -3494, -5306, -3491, -5279, -3451, -5284, -3444, -5342, -3440, -5393, -3447, -5570)
 
-[node name="Player" parent="." index="8"]
+[node name="Player" parent="." index="9"]
 position = Vector2(-1, -229)
 
 [node name="PointLight2D" type="PointLight2D" parent="Player" index="8"]
 texture = ExtResource("8_mch8o")
 texture_scale = 3.0
+
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="." index="10"]
+color = Color(0.760015, 0.799601, 0.822788, 1)
+blend_mode = 1
+metadata/_edit_lock_ = true
 
 [node name="LightFanAnimation" parent="Lights" index="0" instance=ExtResource("8_ekj54")]
 position = Vector2(0, -686)
@@ -573,10 +578,5 @@ modulate = Color(0.554564, 0.705703, 0.707814, 0.0392157)
 position = Vector2(-640, -4090.95)
 scale = Vector2(1.70552, 5.43238)
 texture = ExtResource("11_ht6k6")
-
-[node name="DirectionalLight2D" type="DirectionalLight2D" parent="." index="10"]
-color = Color(0.760015, 0.799601, 0.822788, 1)
-blend_mode = 1
-metadata/_edit_lock_ = true
 
 [connection signal="body_entered" from="ExitGateArea" to="." method="_on_exit_gate_area_body_entered"]
