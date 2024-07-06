@@ -35,7 +35,7 @@ text = "20"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="TextureRect" type="TextureRect" parent="MarginContainer2/HBoxContainer/LaserCounter"]
+[node name="LaserIcon" type="TextureRect" parent="MarginContainer2/HBoxContainer/LaserCounter"]
 layout_mode = 2
 texture = ExtResource("1_cvf48")
 expand_mode = 4
@@ -52,7 +52,7 @@ text = "5
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="TextureRect" type="TextureRect" parent="MarginContainer2/HBoxContainer/GrenadeCounter"]
+[node name="GrenadeIcon" type="TextureRect" parent="MarginContainer2/HBoxContainer/GrenadeCounter"]
 layout_mode = 2
 texture = ExtResource("2_jueib")
 expand_mode = 4
