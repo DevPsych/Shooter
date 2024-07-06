@@ -27,7 +27,8 @@ func _process(_delta: float) -> void:
 	self.look_at(get_global_mouse_position())
 	
 	# shoot laser input
-	if Input.is_action_pressed("primary action") and can_laser:
+	if Input.is_action_pressed("primary action") and can_laser and Globals.laser_amount > 0:
+		Globals.laser_amount -= 1
 		var selected_laser = laser_markers[randi() % laser_markers_size]
 		var facing_direction = (get_global_mouse_position() - self.position).normalized()
 		can_laser = false
@@ -36,7 +37,8 @@ func _process(_delta: float) -> void:
 		laser.emit(selected_laser.global_position, facing_direction)
 	
 	# shoot grenade input
-	if Input.is_action_pressed("secondary action") and can_grenade:
+	if Input.is_action_pressed("secondary action") and can_grenade and Globals.grenade_amount > 0:
+		Globals.grenade_amount -= 1
 		var selected_grenade = laser_markers[randi() % laser_markers_size]
 		var facing_direction = (get_global_mouse_position() - self.position).normalized()
 		can_grenade = false

@@ -1,48 +1,50 @@
-[gd_scene load_steps=4 format=3 uid="uid://cpuctbcuh1g7c"]
+[gd_scene load_steps=7 format=3 uid="uid://cpuctbcuh1g7c"]
 
 [ext_resource type="Texture2D" uid="uid://ccsbhqjojl2o7" path="res://graphics/ui/bullet.png" id="1_cvf48"]
+[ext_resource type="Script" path="res://scenes/user interface/ui.gd" id="1_jnyx1"]
 [ext_resource type="Theme" uid="uid://h0juc67c6qns" path="res://scenes/user interface/main_theme.tres" id="1_tm3er"]
 [ext_resource type="Texture2D" uid="uid://bid52glgmfe8o" path="res://graphics/ui/grenade.png" id="2_jueib"]
+[ext_resource type="Texture2D" uid="uid://c7b8nv2sb8ctu" path="res://graphics/ui/progress_bar/bg.png" id="4_wx6st"]
+[ext_resource type="Texture2D" uid="uid://bvtpe004hr1ss" path="res://graphics/ui/progress_bar/progress.png" id="5_ueqhy"]
 
 [node name="UI" type="CanvasLayer"]
+script = ExtResource("1_jnyx1")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="."]
+[node name="MarginContainer2" type="MarginContainer" parent="."]
+custom_minimum_size = Vector2(10, 0)
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_top = -66.0
-offset_right = 68.0
+offset_top = -77.0
+offset_right = 94.0
 grow_vertical = 0
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_bottom = 10
 
-[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer"]
-custom_minimum_size = Vector2(10, 0)
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer2"]
 layout_mode = 2
 
-[node name="LaserCounter" type="VBoxContainer" parent="HBoxContainer"]
+[node name="LaserCounter" type="VBoxContainer" parent="MarginContainer2/HBoxContainer"]
 custom_minimum_size = Vector2(40, 0)
 layout_mode = 2
 
-[node name="Label2" type="Label" parent="HBoxContainer/LaserCounter"]
+[node name="LaserLabel" type="Label" parent="MarginContainer2/HBoxContainer/LaserCounter"]
 layout_mode = 2
 theme = ExtResource("1_tm3er")
 text = "20"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="TextureRect" type="TextureRect" parent="HBoxContainer/LaserCounter"]
+[node name="TextureRect" type="TextureRect" parent="MarginContainer2/HBoxContainer/LaserCounter"]
 layout_mode = 2
 texture = ExtResource("1_cvf48")
 expand_mode = 4
 
-[node name="MarginContainer2" type="MarginContainer" parent="HBoxContainer/LaserCounter"]
-custom_minimum_size = Vector2(0, 10)
-layout_mode = 2
-
-[node name="GrenadeCounter" type="VBoxContainer" parent="HBoxContainer"]
+[node name="GrenadeCounter" type="VBoxContainer" parent="MarginContainer2/HBoxContainer"]
 custom_minimum_size = Vector2(40, 0)
 layout_mode = 2
 
-[node name="Label" type="Label" parent="HBoxContainer/GrenadeCounter"]
+[node name="GrenadeLabel" type="Label" parent="MarginContainer2/HBoxContainer/GrenadeCounter"]
 layout_mode = 2
 theme = ExtResource("1_tm3er")
 text = "5
@@ -50,11 +52,26 @@ text = "5
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="TextureRect" type="TextureRect" parent="HBoxContainer/GrenadeCounter"]
+[node name="TextureRect" type="TextureRect" parent="MarginContainer2/HBoxContainer/GrenadeCounter"]
 layout_mode = 2
 texture = ExtResource("2_jueib")
 expand_mode = 4
 
-[node name="MarginContainer3" type="MarginContainer" parent="HBoxContainer/GrenadeCounter"]
-custom_minimum_size = Vector2(0, 10)
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -150.0
+offset_top = -40.0
+offset_right = 150.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/margin_bottom = 10
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="MarginContainer"]
 layout_mode = 2
+value = 20.0
+texture_under = ExtResource("4_wx6st")
+texture_progress = ExtResource("5_ueqhy")
