@@ -68,35 +68,35 @@ layer_0/tile_data = PackedInt32Array(-65548, 65536, 2, -65547, 65536, 2, -65546,
 layer_1/name = "Wall"
 layer_1/tile_data = PackedInt32Array(-131066, 65537, 2, -131065, 65537, 0, -131064, 65537, 0, -131063, 65537, 0, -131062, 65537, 0, -131061, 131073, 1, -65525, 1, 2, 11, 1, 2, 65547, 1, 2, 131083, 1, 2, 196619, 65537, 2, 196620, 65537, 0, 196621, 65537, 0, 196622, 65537, 0, 196623, 65537, 0, 196624, 131073, 0, -196602, 1, 2, -262138, 1, 2, -327674, 1, 2, -393210, 1, 1, -327684, 1, 1, -262148, 1, 2, -196612, 1, 2, -131076, 1, 2, -65540, 131073, 2, -65541, 65537, 0, -65542, 65537, 0, -65543, 65537, 0, -65544, 65537, 0, -65545, 65537, 0, -65546, 1, 0)
 
-[node name="Moss" type="Sprite2D" parent="Ground" index="2"]
-position = Vector2(2292, -292)
-texture = ExtResource("5_gbyt3")
-
-[node name="Moss2" type="Sprite2D" parent="Ground" index="3"]
-position = Vector2(4305, 375)
-texture = ExtResource("6_1yelp")
-
-[node name="Moss3" type="Sprite2D" parent="Ground" index="4"]
-position = Vector2(4282, -14)
-texture = ExtResource("7_6kbms")
-
-[node name="Moss4" type="Sprite2D" parent="Ground" index="5"]
-position = Vector2(2942, -12)
-texture = ExtResource("8_aclqd")
-
-[node name="Moss5" type="Sprite2D" parent="Ground" index="6"]
-position = Vector2(2506, -68)
-texture = ExtResource("9_kq2jw")
-
-[node name="SteamVent" parent="Ground" index="7" instance=ExtResource("10_cevre")]
-position = Vector2(-1162, 1416)
-
-[node name="House" parent="Ground" index="8" instance=ExtResource("11_g3g5r")]
+[node name="House" parent="Ground" index="2" instance=ExtResource("11_g3g5r")]
 position = Vector2(-2711, 1989)
 rotation = -1.58215
 
 [node name="Gate" parent="." index="1" instance=ExtResource("12_yil1p")]
 position = Vector2(468, -646)
+
+[node name="Moss" type="Sprite2D" parent="Decals" index="0"]
+position = Vector2(2292, -292)
+texture = ExtResource("5_gbyt3")
+
+[node name="Moss2" type="Sprite2D" parent="Decals" index="1"]
+position = Vector2(4305, 375)
+texture = ExtResource("6_1yelp")
+
+[node name="Moss3" type="Sprite2D" parent="Decals" index="2"]
+position = Vector2(4282, -14)
+texture = ExtResource("7_6kbms")
+
+[node name="Moss4" type="Sprite2D" parent="Decals" index="3"]
+position = Vector2(2942, -12)
+texture = ExtResource("8_aclqd")
+
+[node name="Moss5" type="Sprite2D" parent="Decals" index="4"]
+position = Vector2(2506, -68)
+texture = ExtResource("9_kq2jw")
+
+[node name="SteamVent" parent="Objects" index="0" instance=ExtResource("10_cevre")]
+position = Vector2(-1162, 1416)
 
 [node name="Box" parent="Containers" index="0" instance=ExtResource("14_10atn")]
 position = Vector2(1035, 571)
@@ -104,6 +104,13 @@ position = Vector2(1035, 571)
 [node name="Toilet" parent="Containers" index="1" instance=ExtResource("15_p5m3j")]
 position = Vector2(-328, 716)
 rotation = 4.71239
+
+[node name="Toilet2" parent="Containers" index="2" instance=ExtResource("15_p5m3j")]
+position = Vector2(-51, 1027)
+
+[node name="Toilet3" parent="Containers" index="3" instance=ExtResource("15_p5m3j")]
+position = Vector2(897, 1095)
+rotation = 3.14159
 
 [connection signal="player_entered" from="Ground/House" to="." method="_on_house_player_entered"]
 [connection signal="player_exited" from="Ground/House" to="." method="_on_house_player_exited"]

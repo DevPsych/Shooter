@@ -21,19 +21,13 @@ func _on_player_laser(pos, direction) -> void:
 	laser.rotation = direction.angle()
 	laser.direction = direction
 	$Projectiles.add_child(laser)
-	$UI.update_laser_label()
 
 func _on_player_grenade(pos, direction) -> void:
 	var grenade = GRENADE_SCENE.instantiate() as RigidBody2D
 	grenade.position = pos
 	grenade.linear_velocity = direction * grenade.speed
 	$Projectiles.add_child(grenade)
-	$UI.update_grenade_label()
 
 func tween_stop_player():
 	var tween = create_tween()
 	tween.tween_property($Player,"speed",0,0.5)
-
-func _on_player_update_stats() -> void:
-	$UI.update_laser_label()
-	$UI.update_grenade_label()
