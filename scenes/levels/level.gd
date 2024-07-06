@@ -22,3 +22,7 @@ func _on_player_grenade(pos, direction) -> void:
 func tween_stop_player():
 	var tween = create_tween()
 	tween.tween_property($Player,"speed",0,0.5)
+
+func _on_player_update_stats() -> void:
+	$UI.update_laser_label()
+	$UI.update_grenade_label()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://cewv13fhue5ad"]
+[gd_scene load_steps=16 format=3 uid="uid://cewv13fhue5ad"]
 
 [ext_resource type="PackedScene" uid="uid://cvte0hnvbr30" path="res://scenes/levels/level.tscn" id="1_ffln2"]
 [ext_resource type="Script" path="res://scenes/levels/inside.gd" id="2_qppdw"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://cfmntavr1lkdm" path="res://graphics/lights/overlays/hole.png" id="9_4bees"]
 [ext_resource type="Texture2D" uid="uid://cwxllo3280mkl" path="res://graphics/lights/overlays/lattice.png" id="10_5ryml"]
 [ext_resource type="Texture2D" uid="uid://087rkatbodnk" path="res://graphics/lights/overlays/infrastructure.png" id="11_ht6k6"]
+[ext_resource type="PackedScene" uid="uid://hxvjoda0nln1" path="res://scenes/items/item.tscn" id="14_pf062"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4udmo"]
 size = Vector2(720, 274)
@@ -26,7 +27,6 @@ position = Vector2(-130, -2534)
 texture = ExtResource("3_eitqx")
 region_enabled = true
 region_rect = Rect2(0, 0, 10000, 10000)
-metadata/_edit_lock_ = true
 
 [node name="TileMap" type="TileMap" parent="Ground" index="1"]
 tile_set = ExtResource("3_ljh6x")
@@ -61,7 +61,6 @@ rotation = 1.5708
 
 [node name="SimpleLight7" parent="Ground" index="7" instance=ExtResource("4_1n3rj")]
 position = Vector2(2341, -4012)
-metadata/_edit_lock_ = true
 
 [node name="WallLamp" parent="Ground" index="8" instance=ExtResource("8_48rrr")]
 position = Vector2(-3593, -4671)
@@ -81,26 +80,19 @@ rotation = 1.5708
 
 [node name="Player" parent="." index="2"]
 position = Vector2(3, -401)
-metadata/_edit_group_ = true
 
 [node name="PointLight2D" type="PointLight2D" parent="Player" index="8"]
 texture = ExtResource("8_mch8o")
 texture_scale = 3.0
 
-[node name="Lights" parent="." index="3"]
-metadata/_edit_lock_ = true
-
 [node name="LightFanAnimation" parent="Lights" index="0" instance=ExtResource("8_ekj54")]
 position = Vector2(0, -686)
-metadata/_edit_lock_ = true
 
 [node name="LightFanAnimation2" parent="Lights" index="1" instance=ExtResource("8_ekj54")]
 position = Vector2(2114, -1029)
-metadata/_edit_lock_ = true
 
 [node name="LightFanAnimation3" parent="Lights" index="2" instance=ExtResource("8_ekj54")]
 position = Vector2(-2083, -1016)
-metadata/_edit_lock_ = true
 
 [node name="LightFanAnimation4" parent="Lights" index="3" instance=ExtResource("8_ekj54")]
 position = Vector2(-1710, -3243)
@@ -111,25 +103,21 @@ position = Vector2(-3122, -3526)
 
 [node name="LightFanAnimation5" parent="Lights" index="5" instance=ExtResource("8_ekj54")]
 position = Vector2(2152, -2407)
-metadata/_edit_lock_ = true
 
 [node name="LightFanAnimation6" parent="Lights" index="6" instance=ExtResource("8_ekj54")]
 position = Vector2(2133, -3347)
-metadata/_edit_lock_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Lights" index="7"]
 modulate = Color(0.929982, 0.554957, 0.489986, 0.360784)
 position = Vector2(-2444, -4599)
 scale = Vector2(7.17713, 7.17713)
 texture = ExtResource("9_4bees")
-metadata/_edit_lock_ = true
 
 [node name="Sprite2D2" type="Sprite2D" parent="Lights" index="8"]
 modulate = Color(1, 0.341176, 1, 0.0392157)
 position = Vector2(1322, -2901)
 scale = Vector2(4.11043, 4.11043)
 texture = ExtResource("9_4bees")
-metadata/_edit_lock_ = true
 
 [node name="Sprite2D3" type="Sprite2D" parent="Lights" index="9"]
 modulate = Color(0.650883, 0.706353, 0.411964, 0.0392157)
@@ -160,7 +148,6 @@ modulate = Color(0.554564, 0.705703, 0.707814, 0.0392157)
 position = Vector2(-640, -4090.95)
 scale = Vector2(1.70552, 5.43238)
 texture = ExtResource("11_ht6k6")
-metadata/_edit_lock_ = true
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="." index="4"]
 color = Color(0.760015, 0.799601, 0.822788, 1)
@@ -172,5 +159,8 @@ metadata/_edit_lock_ = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ExitGateArea" index="0"]
 position = Vector2(0, 140)
 shape = SubResource("RectangleShape2D_4udmo")
+
+[node name="Item" parent="." index="7" instance=ExtResource("14_pf062")]
+position = Vector2(857, -982)
 
 [connection signal="body_entered" from="ExitGateArea" to="." method="_on_exit_gate_area_body_entered"]

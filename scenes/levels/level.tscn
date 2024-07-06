@@ -8,12 +8,15 @@
 script = ExtResource("1_aj50c")
 
 [node name="Ground" type="Node2D" parent="."]
+metadata/_edit_lock_ = true
+metadata/_edit_group_ = true
 
 [node name="Projectiles" type="Node2D" parent="."]
 metadata/_edit_lock_ = true
 
 [node name="Player" parent="." instance=ExtResource("4_7c6nt")]
 position = Vector2(483, 540)
+metadata/_edit_group_ = true
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 unique_name_in_owner = true
@@ -21,8 +24,11 @@ zoom = Vector2(0.6, 0.6)
 position_smoothing_enabled = true
 
 [node name="Lights" type="Node2D" parent="."]
+metadata/_edit_lock_ = true
+metadata/_edit_group_ = true
 
 [node name="UI" parent="." instance=ExtResource("3_86wr4")]
 
 [connection signal="grenade" from="Player" to="." method="_on_player_grenade"]
 [connection signal="laser" from="Player" to="." method="_on_player_laser"]
+[connection signal="update_stats" from="Player" to="." method="_on_player_update_stats"]
