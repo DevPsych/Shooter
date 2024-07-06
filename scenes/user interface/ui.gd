@@ -11,15 +11,23 @@ var red: Color = Color(.9,0,0,1)
 @onready var health_progress_bar: TextureProgressBar = $MarginContainer/HealthProgressBar
 
 func _ready():
-	Globals.connect("health_changed", update_health_bar)
-	Globals.connect("laser_amount_changed", update_laser_label)
-	Globals.connect("grenade_amount_changed", update_grenade_label)
-	
+	Globals.connect("stat_changed", update_stats)
+	load_stats()
+
+func load_stats():
 	update_laser_label()
 	update_grenade_label()
+	update_health_bar()
 	update_color(Globals.laser_amount, laser_label, laser_icon)
 	update_color(Globals.grenade_amount, grenade_label, grenade_icon)
-	update_health_bar()
+
+func update_stats(stat_name: String):
+	if stat_name == "laser":
+		update_laser_label()
+	elif stat_name == "grenade":
+		update_grenade_label()
+	elif stat_name == "health":
+		update_health_bar()
 
 func update_laser_label():
 	laser_label.text = str(Globals.laser_amount)

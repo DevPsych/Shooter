@@ -11,6 +11,10 @@ script = ExtResource("1_aj50c")
 metadata/_edit_lock_ = true
 metadata/_edit_group_ = true
 
+[node name="Containers" type="Node2D" parent="."]
+
+[node name="Items" type="Node2D" parent="."]
+
 [node name="Projectiles" type="Node2D" parent="."]
 metadata/_edit_lock_ = true
 
