@@ -8,6 +8,7 @@ var speed: int = max_speed
 
 var can_laser: bool = true
 var can_grenade: bool = true
+var vulnerable: bool = true
 
 var laser_markers
 var laser_markers_size
@@ -52,5 +53,11 @@ func _on_laser_timer_timeout() -> void:
 func _on_grenade_timer_timeout() -> void:
 	can_grenade = true
 
-func take_damage(_damage):
-	print("Player damaged")	
+func take_damage(damage):
+	if vulnerable:
+		Globals.health -= damage
+		vulnerable = false
+		$VulnerableTimer.start()
+
+func _on_vulnerable_timer_timeout() -> void:
+	vulnerable = true

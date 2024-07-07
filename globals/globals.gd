@@ -16,11 +16,12 @@ var grenade_amount: int = 5:
 		grenade_amount = value
 		stat_changed.emit("grenade")
 		
+var max_health: int = 100
 var health: int = 60:
 	get:
 		return health
 	set(value):
-		health = value
+		health = min(value,max_health)
 		stat_changed.emit("health")
 
 var player_pos: Vector2

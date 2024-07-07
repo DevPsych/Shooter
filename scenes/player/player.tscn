@@ -38,14 +38,6 @@ position = Vector2(35, 0)
 rotation = 1.5708
 texture = ExtResource("1_pis2i")
 
-[node name="LaserTimer" type="Timer" parent="."]
-wait_time = 0.5
-one_shot = true
-
-[node name="GrenadeTimer" type="Timer" parent="."]
-wait_time = 2.0
-one_shot = true
-
 [node name="LaserStartPositions" type="Node2D" parent="."]
 
 [node name="Marker2D" type="Marker2D" parent="LaserStartPositions"]
@@ -68,5 +60,17 @@ one_shot = true
 [node name="LightOccluder2D" type="LightOccluder2D" parent="."]
 occluder = SubResource("OccluderPolygon2D_bcf5h")
 
+[node name="LaserTimer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
+[node name="GrenadeTimer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[node name="VulnerableTimer" type="Timer" parent="."]
+wait_time = 0.5
+
 [connection signal="timeout" from="LaserTimer" to="." method="_on_laser_timer_timeout"]
 [connection signal="timeout" from="GrenadeTimer" to="." method="_on_grenade_timer_timeout"]
+[connection signal="timeout" from="VulnerableTimer" to="." method="_on_vulnerable_timer_timeout"]
