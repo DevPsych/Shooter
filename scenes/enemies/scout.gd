@@ -31,6 +31,7 @@ func take_damage(damage):
 	if vulnerable:
 		health -= damage
 		vulnerable = false
+		$Sprite2D.material.set_shader_parameter("progress", 0.8)
 		$Timers/VulnerableTimer.start()
 		if health <= 0:
 			self.queue_free()
@@ -40,3 +41,4 @@ func _on_laser_timer_timeout() -> void:
 
 func _on_vulnerable_timer_timeout() -> void:
 	vulnerable = true
+	$Sprite2D.material.set_shader_parameter("progress", 0)
