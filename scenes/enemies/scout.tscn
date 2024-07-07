@@ -51,9 +51,11 @@ position = Vector2(122, 7)
 [node name="Timers" type="Node" parent="."]
 
 [node name="LaserTimer" type="Timer" parent="Timers"]
+one_shot = true
 
 [node name="VulnerableTimer" type="Timer" parent="Timers"]
 wait_time = 0.2
+one_shot = true
 
 [connection signal="body_entered" from="AttackArea" to="." method="_on_attack_area_body_entered"]
 [connection signal="body_exited" from="AttackArea" to="." method="_on_attack_area_body_exited"]

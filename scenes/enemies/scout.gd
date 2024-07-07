@@ -11,7 +11,7 @@ signal laser(pos, direction)
 
 func _process(_delta: float) -> void:
 	if player_nearby:
-		look_at(Globals.player_pos)
+		self.look_at(Globals.player_pos)
 		if can_laser:
 			var marker_node = $LaserSpawnPosition.get_child(can_shoot_right_laser)
 			can_shoot_right_laser = not can_shoot_right_laser
