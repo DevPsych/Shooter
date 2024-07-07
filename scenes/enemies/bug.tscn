@@ -41,6 +41,7 @@ radius = 399.836
 radius = 106.005
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_368tx"]
+resource_local_to_scene = true
 shader = ExtResource("1_efov4")
 shader_parameter/color = Color(0.69822, 0.834169, 0.858716, 1)
 shader_parameter/progress = 0.0

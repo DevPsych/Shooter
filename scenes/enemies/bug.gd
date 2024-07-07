@@ -2,10 +2,9 @@ extends CharacterBody2D
 
 var player_detected: bool = false
 var player_attackable: bool = false
-var can_attack: bool = true
 var vulnerable: bool = true
 
-@export var movement_speed: int = 400
+@export var movement_speed: int = 300
 @export var health: int = 30
 
 var player: Node2D
@@ -45,13 +44,11 @@ func _on_attack_area_body_exited(_body: Node2D) -> void:
 	player_attackable = false
 
 func _on_attack_timer_timeout() -> void:
-	can_attack = true
 	$AnimatedSprite2D.play("attack")
 
 func _on_animated_sprite_2d_animation_finished() -> void:
-	if can_attack and player_attackable and "take_damage" in player:
+	if player_attackable and "take_damage" in player:
 		player.take_damage(10)
-		can_attack = false
 		$Timers/AttackTimer.start()
 
 func _on_vulnerable_timer_timeout() -> void:
