@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bctf44se3q6gg"]
+[gd_scene load_steps=12 format=3 uid="uid://bctf44se3q6gg"]
 
 [ext_resource type="Script" path="res://scenes/projectiles/grenade.gd" id="1_fm8pm"]
 [ext_resource type="Texture2D" uid="uid://b30t8xaeulw1w" path="res://graphics/projectiles/grenade.png" id="1_sv3lq"]
@@ -10,6 +10,9 @@ bounce = 0.4
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ub1cn"]
 radius = 24.0208
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_u5on8"]
+radius = 63.1981
 
 [sub_resource type="Animation" id="Animation_yei48"]
 resource_name = "Explosion"
@@ -63,6 +66,18 @@ tracks/3/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("ExplosionRadius/CollisionShape2D:scale")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(2.07, 2.07)]
 }
 
 [sub_resource type="Animation" id="Animation_f3pl5"]
@@ -133,6 +148,18 @@ tracks/2/keys = {
 "update": 1,
 "values": [true]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("ExplosionRadius/CollisionShape2D:disabled")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_uqbcn"]
 _data = {
@@ -153,8 +180,19 @@ script = ExtResource("1_fm8pm")
 shape = SubResource("CircleShape2D_ub1cn")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("1_sv3lq")
+
+[node name="ExplosionRadius" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ExplosionRadius"]
+scale = Vector2(2.07, 2.07)
+shape = SubResource("CircleShape2D_u5on8")
+disabled = true
+debug_color = Color(0.70505, 0.462269, 0.441109, 0.42)
 
 [node name="Explosion" type="Sprite2D" parent="."]
 texture = ExtResource("3_5cobf")
@@ -172,3 +210,6 @@ libraries = {
 "": SubResource("AnimationLibrary_uqbcn")
 }
 autoplay = "Red Blinking Light"
+
+[connection signal="body_entered" from="ExplosionRadius" to="." method="_on_explosion_radius_body_entered"]
+[connection signal="body_exited" from="ExplosionRadius" to="." method="_on_explosion_radius_body_exited"]

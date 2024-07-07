@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://bywllwdkhdygb"]
+[gd_scene load_steps=19 format=3 uid="uid://bywllwdkhdygb"]
 
 [ext_resource type="PackedScene" uid="uid://cvte0hnvbr30" path="res://scenes/levels/level.tscn" id="1_c1njk"]
 [ext_resource type="Script" path="res://scenes/levels/outside.gd" id="2_evuyf"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://b1wj2o6ouhsi3" path="res://scenes/houses/house.tscn" id="11_g3g5r"]
 [ext_resource type="PackedScene" uid="uid://bxoecq5f105ql" path="res://scenes/objects/gate.tscn" id="12_yil1p"]
 [ext_resource type="PackedScene" uid="uid://bdv30d6l7tnoy" path="res://scenes/enemies/scout.tscn" id="14_0ck26"]
+[ext_resource type="PackedScene" uid="uid://b6wvxic7k0658" path="res://scenes/objects/box.tscn" id="14_axdgf"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_i4pkk"]
 resource_name = "Soil"
@@ -96,6 +97,9 @@ texture = ExtResource("9_kq2jw")
 
 [node name="SteamVent" parent="Objects" index="0" instance=ExtResource("10_cevre")]
 position = Vector2(-1162, 1416)
+
+[node name="Box" parent="Containers" index="0" instance=ExtResource("14_axdgf")]
+position = Vector2(233, 1413)
 
 [node name="Scout" parent="Enemies" index="0" instance=ExtResource("14_0ck26")]
 position = Vector2(1770, 1437)
