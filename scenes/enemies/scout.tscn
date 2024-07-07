@@ -41,8 +41,14 @@ position = Vector2(110, -31)
 [node name="Marker2D2" type="Marker2D" parent="LaserSpawnPosition"]
 position = Vector2(122, 7)
 
-[node name="Timer" type="Timer" parent="."]
+[node name="Timers" type="Node" parent="."]
+
+[node name="LaserTimer" type="Timer" parent="Timers"]
+
+[node name="VulnerableTimer" type="Timer" parent="Timers"]
+wait_time = 0.5
 
 [connection signal="body_entered" from="AttackArea" to="." method="_on_attack_area_body_entered"]
 [connection signal="body_exited" from="AttackArea" to="." method="_on_attack_area_body_exited"]
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Timers/LaserTimer" to="." method="_on_laser_timer_timeout"]
+[connection signal="timeout" from="Timers/VulnerableTimer" to="." method="_on_vulnerable_timer_timeout"]

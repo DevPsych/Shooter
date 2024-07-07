@@ -1,6 +1,6 @@
 extends ItemParent
 
-func take_damage():
+func take_damage(_damage):
 	if not opened:
 		$LidSprite.hide()
 		for i in range(5):
