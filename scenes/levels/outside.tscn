@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://bywllwdkhdygb"]
+[gd_scene load_steps=36 format=3 uid="uid://bywllwdkhdygb"]
 
 [ext_resource type="PackedScene" uid="uid://cvte0hnvbr30" path="res://scenes/levels/level.tscn" id="1_c1njk"]
 [ext_resource type="Script" path="res://scenes/levels/outside.gd" id="2_evuyf"]
@@ -17,9 +17,18 @@
 [ext_resource type="PackedScene" uid="uid://bdyd0lvl04kmp" path="res://scenes/enemies/car.tscn" id="14_v22vb"]
 [ext_resource type="PackedScene" uid="uid://b6wvxic7k0658" path="res://scenes/objects/box.tscn" id="15_u22rx"]
 [ext_resource type="PackedScene" uid="uid://pusa1pqh6o13" path="res://scenes/enemies/hunter.tscn" id="16_4djue"]
+[ext_resource type="Texture2D" uid="uid://celw08yogakbb" path="res://graphics/objects/infestation/corner.png" id="16_f67oq"]
+[ext_resource type="Texture2D" uid="uid://cef71j7vdmn4w" path="res://graphics/objects/infestation/large.png" id="17_0pweh"]
 [ext_resource type="PackedScene" uid="uid://bdv30d6l7tnoy" path="res://scenes/enemies/scout.tscn" id="17_285gs"]
 [ext_resource type="PackedScene" uid="uid://cdyet4fwd4rra" path="res://scenes/enemies/drone.tscn" id="18_kwlv2"]
+[ext_resource type="Texture2D" uid="uid://bfh0mfnt0ea3w" path="res://graphics/objects/infestation/line.png" id="18_rl0ex"]
 [ext_resource type="PackedScene" uid="uid://c7w6n0qkghurm" path="res://scenes/enemies/bug.tscn" id="19_she8i"]
+[ext_resource type="Texture2D" uid="uid://cogic82xmx3ar" path="res://graphics/objects/infestation/medium.png" id="19_yslna"]
+[ext_resource type="Texture2D" uid="uid://dthitpyhw6urr" path="res://graphics/objects/infestation/small.png" id="20_no8h1"]
+[ext_resource type="Texture2D" uid="uid://cvd0u3yqvpwa6" path="res://graphics/objects/infestation/small_2.png" id="21_xwnh3"]
+[ext_resource type="Texture2D" uid="uid://fvibkpvlh7m4" path="res://graphics/objects/infestation/small_3.png" id="22_18e5j"]
+[ext_resource type="Texture2D" uid="uid://cyhmuaqfmxu1a" path="res://graphics/objects/infestation/small_4.png" id="23_l281k"]
+[ext_resource type="Texture2D" uid="uid://ex2xxd17og6j" path="res://graphics/objects/infestation/spikes.png" id="24_d51qm"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_i4pkk"]
 resource_name = "Soil"
@@ -302,20 +311,196 @@ rotation = 3.14159
 position = Vector2(2254, 27)
 rotation = 3.14159
 
+[node name="Corner" type="Sprite2D" parent="Infestations" index="0"]
+position = Vector2(4045, -407)
+rotation = -0.993883
+texture = ExtResource("16_f67oq")
+
+[node name="Large" type="Sprite2D" parent="Infestations" index="1"]
+position = Vector2(4082, 1600)
+texture = ExtResource("17_0pweh")
+
+[node name="Line" type="Sprite2D" parent="Infestations" index="2"]
+position = Vector2(5557, 525)
+texture = ExtResource("18_rl0ex")
+
+[node name="Medium" type="Sprite2D" parent="Infestations" index="3"]
+position = Vector2(3965, -398)
+texture = ExtResource("19_yslna")
+
+[node name="Small" type="Sprite2D" parent="Infestations" index="4"]
+position = Vector2(4091, -422)
+rotation = -1.35499
+texture = ExtResource("20_no8h1")
+
+[node name="Small2" type="Sprite2D" parent="Infestations" index="5"]
+position = Vector2(3404, 717)
+texture = ExtResource("21_xwnh3")
+
+[node name="Small3" type="Sprite2D" parent="Infestations" index="6"]
+position = Vector2(5191, -1269)
+texture = ExtResource("22_18e5j")
+
+[node name="Small4" type="Sprite2D" parent="Infestations" index="7"]
+position = Vector2(4292, -495)
+texture = ExtResource("23_l281k")
+
+[node name="Spikes" type="Sprite2D" parent="Infestations" index="8"]
+position = Vector2(5520, -1030)
+texture = ExtResource("24_d51qm")
+
+[node name="Large2" type="Sprite2D" parent="Infestations" index="9"]
+position = Vector2(5286, -1224)
+scale = Vector2(1, 1.00345)
+texture = ExtResource("17_0pweh")
+
+[node name="Line2" type="Sprite2D" parent="Infestations" index="10"]
+position = Vector2(4097, -1260)
+rotation = 1.56628
+texture = ExtResource("18_rl0ex")
+
+[node name="Medium2" type="Sprite2D" parent="Infestations" index="11"]
+position = Vector2(4883, -710)
+texture = ExtResource("19_yslna")
+
+[node name="Small5" type="Sprite2D" parent="Infestations" index="12"]
+position = Vector2(3840, -1263)
+rotation = -1.35499
+texture = ExtResource("20_no8h1")
+
+[node name="Small6" type="Sprite2D" parent="Infestations" index="13"]
+position = Vector2(4010, 1507)
+texture = ExtResource("21_xwnh3")
+
+[node name="Small7" type="Sprite2D" parent="Infestations" index="14"]
+position = Vector2(4179, 1657)
+rotation = -0.886301
+texture = ExtResource("22_18e5j")
+
+[node name="Small8" type="Sprite2D" parent="Infestations" index="15"]
+position = Vector2(5551, 315)
+texture = ExtResource("23_l281k")
+
+[node name="Spikes2" type="Sprite2D" parent="Infestations" index="16"]
+position = Vector2(3440, 802)
+texture = ExtResource("24_d51qm")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Infestations" index="17"]
+collision_layer = 4
+collision_mask = 11
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Infestations/StaticBody2D" index="0"]
+polygon = PackedVector2Array(3786, -1300, 3788, -1262, 3866, -1236, 3897, -1247, 3981, -1246, 4116, -1238, 4280, -1240, 4280, -1284)
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="Infestations" index="18"]
+collision_layer = 4
+collision_mask = 11
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Infestations/StaticBody2D2" index="0"]
+polygon = PackedVector2Array(5165, -1296, 5175, -1240, 5218, -1240, 5218, -1194, 5237, -1169, 5276, -1151, 5306, -1154, 5331, -1170, 5350, -1204, 5355, -1257, 5325, -1296, 5285, -1297, 5234, -1281, 5223, -1251, 5209, -1280, 5193, -1314)
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="Infestations" index="19"]
+collision_layer = 4
+collision_mask = 11
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Infestations/StaticBody2D3" index="0"]
+polygon = PackedVector2Array(5481, -1052, 5470, -1034, 5486, -1014, 5485, -1000, 5480, -984, 5507, -1000, 5537, -994, 5546, -1000, 5558, -1010, 5566, -1032, 5566, -1053, 5553, -1076, 5528, -1074)
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="Infestations" index="20"]
+collision_layer = 4
+collision_mask = 11
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Infestations/StaticBody2D4" index="0"]
+polygon = PackedVector2Array(4849, -719, 4849, -694, 4865, -678, 4890, -678, 4907, -689, 4913, -705, 4914, -718, 4904, -739, 4880, -746, 4869, -736)
+
+[node name="StaticBody2D5" type="StaticBody2D" parent="Infestations" index="21"]
+collision_layer = 4
+collision_mask = 11
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Infestations/StaticBody2D5" index="0"]
+polygon = PackedVector2Array(3808, -361, 3833, -399, 3860, -436, 3896, -458, 3958, -485, 4016, -497, 4048, -511, 4106, -502, 4160, -502, 4205, -494, 4250, -472, 4271, -487, 4269, -502, 4282, -511, 4298, -513, 4310, -490, 4307, -476, 4283, -472, 4271, -461, 4281, -447, 4262, -417, 4208, -441, 4166, -453, 4142, -462, 4143, -407, 4135, -393, 4095, -395, 4051, -409, 4041, -429, 4032, -463, 3981, -447, 3998, -428, 4007, -402, 3997, -382, 3985, -369, 3938, -366, 3928, -385, 3929, -412, 3898, -399, 3866, -376, 3852, -348, 3840, -337)
+
+[node name="StaticBody2D6" type="StaticBody2D" parent="Infestations" index="22"]
+collision_layer = 4
+collision_mask = 11
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Infestations/StaticBody2D6" index="0"]
+polygon = PackedVector2Array(5537, 298, 5520, 317, 5529, 333, 5533, 350, 5530, 382, 5533, 416, 5533, 457, 5533, 530, 5533, 613, 5532, 662, 5536, 703, 5563, 703, 5574, 689, 5571, 647, 5580, 561, 5585, 525, 5571, 500, 5571, 455, 5578, 402, 5577, 374, 5585, 360, 5574, 333, 5577, 305)
+
+[node name="StaticBody2D7" type="StaticBody2D" parent="Infestations" index="23"]
+collision_layer = 4
+collision_mask = 11
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Infestations/StaticBody2D7" index="0"]
+polygon = PackedVector2Array(3392, 687, 3416, 684, 3433, 710, 3434, 741, 3438, 758, 3458, 757, 3476, 760, 3480, 783, 3484, 820, 3464, 847, 3426, 844, 3400, 838, 3389, 791, 3413, 775, 3397, 745, 3377, 731)
+
+[node name="StaticBody2D8" type="StaticBody2D" parent="Infestations" index="24"]
+collision_layer = 4
+collision_mask = 11
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Infestations/StaticBody2D8" index="0"]
+polygon = PackedVector2Array(3999, 1479, 4017, 1474, 4026, 1486, 4031, 1513, 4034, 1535, 4038, 1543, 4050, 1529, 4093, 1530, 4114, 1535, 4142, 1561, 4145, 1605, 4144, 1635, 4176, 1639, 4202, 1653, 4206, 1676, 4181, 1682, 4157, 1671, 4146, 1649, 4112, 1658, 4099, 1673, 4064, 1678, 4022, 1657, 4008, 1611, 4024, 1559, 4013, 1531, 3991, 1531, 3994, 1491)
+
+[node name="Enemies" parent="." index="8"]
+metadata/_edit_lock_ = true
+metadata/_edit_group_ = true
+
 [node name="Hunter" parent="Enemies" index="0" instance=ExtResource("16_4djue")]
-position = Vector2(930, 1075)
+position = Vector2(4320, 89)
 
 [node name="Scout" parent="Enemies" index="1" instance=ExtResource("17_285gs")]
-position = Vector2(-3772, 331)
+position = Vector2(-3762, 243)
 
-[node name="Drone" parent="Enemies" index="2" instance=ExtResource("18_kwlv2")]
-position = Vector2(-678, 822)
+[node name="Scout2" parent="Enemies" index="2" instance=ExtResource("17_285gs")]
+position = Vector2(-3749, 1790)
 
-[node name="Bug" parent="Enemies" index="3" instance=ExtResource("19_she8i")]
-position = Vector2(-1966, -1127)
+[node name="Scout3" parent="Enemies" index="3" instance=ExtResource("17_285gs")]
+position = Vector2(-2155, 4635)
+
+[node name="Scout4" parent="Enemies" index="4" instance=ExtResource("17_285gs")]
+position = Vector2(899, 4615)
+
+[node name="Scout7" parent="Enemies" index="5" instance=ExtResource("17_285gs")]
+position = Vector2(991, 2273)
+
+[node name="Scout8" parent="Enemies" index="6" instance=ExtResource("17_285gs")]
+position = Vector2(-2016, 2219)
+
+[node name="Scout5" parent="Enemies" index="7" instance=ExtResource("17_285gs")]
+position = Vector2(-1535, 356)
+
+[node name="Scout6" parent="Enemies" index="8" instance=ExtResource("17_285gs")]
+position = Vector2(549, 335)
+
+[node name="Drone" parent="Enemies" index="9" instance=ExtResource("18_kwlv2")]
+position = Vector2(-2500, -1394)
+
+[node name="Drone2" parent="Enemies" index="10" instance=ExtResource("18_kwlv2")]
+position = Vector2(-1230, -1699)
+
+[node name="Drone4" parent="Enemies" index="11" instance=ExtResource("18_kwlv2")]
+position = Vector2(3749, 5295)
+
+[node name="Drone5" parent="Enemies" index="12" instance=ExtResource("18_kwlv2")]
+position = Vector2(2833, 3589)
+
+[node name="Drone3" parent="Enemies" index="13" instance=ExtResource("18_kwlv2")]
+position = Vector2(2434, -1636)
+
+[node name="Bug" parent="Enemies" index="14" instance=ExtResource("19_she8i")]
+position = Vector2(355, 3995)
+
+[node name="Bug2" parent="Enemies" index="15" instance=ExtResource("19_she8i")]
+position = Vector2(317, 2894)
+
+[node name="Bug3" parent="Enemies" index="16" instance=ExtResource("19_she8i")]
+position = Vector2(-1190, 2783)
+
+[node name="Bug4" parent="Enemies" index="17" instance=ExtResource("19_she8i")]
+position = Vector2(-1359, 3431)
 
 [node name="Player" parent="." index="9"]
-position = Vector2(170, 1094)
+position = Vector2(5518, 2342)
 
 [node name="CarPath" type="Path2D" parent="." index="12"]
 position = Vector2(-1151, 539)
@@ -338,6 +523,7 @@ position = Vector2(6081.5, 2346)
 shape = SubResource("RectangleShape2D_4nue2")
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="." index="14"]
+visible = false
 navigation_polygon = SubResource("NavigationPolygon_ftvbc")
 
 [connection signal="player_entered" from="Ground/House" to="." method="_on_house_player_entered"]

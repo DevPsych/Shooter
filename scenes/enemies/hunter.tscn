@@ -10,7 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://cpjoc6ch5p4r6" path="res://graphics/enemies/hunter/parts/claw.png" id="8_7qb7c"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_wfx8u"]
-radius = 2430.44
+radius = 1872.21
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0jwsk"]
 radius = 77.1622
@@ -284,7 +284,6 @@ texture = ExtResource("2_eja0k")
 position = Vector2(26, -14)
 scale = Vector2(0.99983, 0.99983)
 rest = Transform2D(0.99983, 0, 0, 0.99983, 26, -14)
-metadata/_local_pose_override_enabled_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Skeleton2D/Torso/FrontRightLeg"]
 position = Vector2(20, -41)
@@ -297,7 +296,6 @@ rest = Transform2D(0.999932, 0, 0, 0.999932, 43, -68)
 auto_calculate_length_and_angle = false
 length = 129.429
 bone_angle = -57.464
-metadata/_local_pose_override_enabled_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Skeleton2D/Torso/FrontRightLeg/FrontRightClaw"]
 position = Vector2(44, -36)
@@ -307,7 +305,6 @@ texture = ExtResource("4_1pnw0")
 position = Vector2(-26, -14)
 scale = Vector2(0.999917, 0.999917)
 rest = Transform2D(0.999917, 0, 0, 0.999917, -26, -14)
-metadata/_local_pose_override_enabled_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Skeleton2D/Torso/FrontLeftLeg"]
 position = Vector2(-20, -41)
@@ -321,7 +318,6 @@ rest = Transform2D(0.999932, 0, 0, 0.999932, -43, -68)
 auto_calculate_length_and_angle = false
 length = 129.429
 bone_angle = -122.4
-metadata/_local_pose_override_enabled_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Skeleton2D/Torso/FrontLeftLeg/FrontLeftClaw"]
 position = Vector2(-44, -36)
@@ -332,7 +328,6 @@ texture = ExtResource("4_1pnw0")
 position = Vector2(31, 20)
 scale = Vector2(0.999907, 0.999907)
 rest = Transform2D(0.999907, 0, 0, 0.999907, 31, 20)
-metadata/_local_pose_override_enabled_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Skeleton2D/Torso/BackRightLeg"]
 position = Vector2(17, 31)
@@ -345,7 +340,6 @@ rest = Transform2D(0.999941, 0, 0, 0.999941, 37, 65)
 auto_calculate_length_and_angle = false
 length = 129.429
 bone_angle = 67.4
-metadata/_local_pose_override_enabled_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Skeleton2D/Torso/BackRightLeg/BackRightClaw"]
 position = Vector2(31, 49)
@@ -355,7 +349,6 @@ texture = ExtResource("6_s1yda")
 position = Vector2(-31, 20)
 scale = Vector2(0.999913, 0.999913)
 rest = Transform2D(0.999913, 0, 0, 0.999913, -31, 20)
-metadata/_local_pose_override_enabled_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Skeleton2D/Torso/BackLeftLeg"]
 position = Vector2(-17, 31)
@@ -369,7 +362,6 @@ rest = Transform2D(0.999932, 0, 0, 0.999932, -37, 65)
 auto_calculate_length_and_angle = false
 length = 129.429
 bone_angle = 111.4
-metadata/_local_pose_override_enabled_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Skeleton2D/Torso/BackLeftLeg/BackLeftClaw"]
 position = Vector2(-31, 49)
