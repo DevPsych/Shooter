@@ -19,6 +19,7 @@ func _process(_delta):
 func take_damage(damage):
 	if vulnerable:
 		health -= damage
+		$AudioStreamPlayer2D.play()
 		vulnerable = false
 		$Timers/VulnerableTimer.start()
 		$AnimatedSprite2D.material.set_shader_parameter("progress",0.8)

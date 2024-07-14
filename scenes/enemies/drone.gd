@@ -33,6 +33,7 @@ func _process(delta: float) -> void:
 func take_damage(damage):
 	if vulnerable:
 		health -= damage
+		$Audios/HitAudio.play()
 		vulnerable = false
 		$VulnerableTimer.start()
 		$DroneSprite.material.set_shader_parameter("progress", 0.8)

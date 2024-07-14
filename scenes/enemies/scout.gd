@@ -30,6 +30,7 @@ func _on_attack_area_body_exited(_body: Node2D) -> void:
 func take_damage(damage):
 	if vulnerable:
 		health -= damage
+		$AudioStreamPlayer2D.play()
 		vulnerable = false
 		$Sprite2D.material.set_shader_parameter("progress", 0.8)
 		$Timers/VulnerableTimer.start()

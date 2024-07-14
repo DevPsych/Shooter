@@ -56,6 +56,7 @@ func _on_grenade_timer_timeout() -> void:
 func take_damage(damage):
 	if vulnerable:
 		Globals.health -= damage
+		$AudioStreamPlayer2D.play()
 		vulnerable = false
 		$VulnerableTimer.start()
 

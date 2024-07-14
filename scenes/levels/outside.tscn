@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://bywllwdkhdygb"]
+[gd_scene load_steps=27 format=3 uid="uid://bywllwdkhdygb"]
 
 [ext_resource type="PackedScene" uid="uid://cvte0hnvbr30" path="res://scenes/levels/level.tscn" id="1_c1njk"]
 [ext_resource type="Script" path="res://scenes/levels/outside.gd" id="2_evuyf"]
@@ -17,6 +17,9 @@
 [ext_resource type="PackedScene" uid="uid://bdyd0lvl04kmp" path="res://scenes/enemies/car.tscn" id="14_v22vb"]
 [ext_resource type="PackedScene" uid="uid://b6wvxic7k0658" path="res://scenes/objects/box.tscn" id="15_u22rx"]
 [ext_resource type="PackedScene" uid="uid://pusa1pqh6o13" path="res://scenes/enemies/hunter.tscn" id="16_4djue"]
+[ext_resource type="PackedScene" uid="uid://bdv30d6l7tnoy" path="res://scenes/enemies/scout.tscn" id="17_285gs"]
+[ext_resource type="PackedScene" uid="uid://cdyet4fwd4rra" path="res://scenes/enemies/drone.tscn" id="18_kwlv2"]
+[ext_resource type="PackedScene" uid="uid://c7w6n0qkghurm" path="res://scenes/enemies/bug.tscn" id="19_she8i"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_i4pkk"]
 resource_name = "Soil"
@@ -301,6 +304,15 @@ rotation = 3.14159
 
 [node name="Hunter" parent="Enemies" index="0" instance=ExtResource("16_4djue")]
 position = Vector2(930, 1075)
+
+[node name="Scout" parent="Enemies" index="1" instance=ExtResource("17_285gs")]
+position = Vector2(-3772, 331)
+
+[node name="Drone" parent="Enemies" index="2" instance=ExtResource("18_kwlv2")]
+position = Vector2(-678, 822)
+
+[node name="Bug" parent="Enemies" index="3" instance=ExtResource("19_she8i")]
+position = Vector2(-1966, -1127)
 
 [node name="Player" parent="." index="9"]
 position = Vector2(170, 1094)

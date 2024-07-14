@@ -1,9 +1,10 @@
-[gd_scene load_steps=12 format=3 uid="uid://bctf44se3q6gg"]
+[gd_scene load_steps=13 format=3 uid="uid://bctf44se3q6gg"]
 
 [ext_resource type="Script" path="res://scenes/projectiles/grenade.gd" id="1_fm8pm"]
 [ext_resource type="Texture2D" uid="uid://b30t8xaeulw1w" path="res://graphics/projectiles/grenade.png" id="1_sv3lq"]
 [ext_resource type="Texture2D" uid="uid://dm66hfjqnjcw0" path="res://graphics/explosions/explosion_3.png" id="3_5cobf"]
 [ext_resource type="Texture2D" uid="uid://bbm7ov0g2rcp3" path="res://graphics/lights/textures/circle.png" id="4_1dss3"]
+[ext_resource type="AudioStream" uid="uid://jq5mtv5mya6d" path="res://audio/explosion.wav" id="5_rj5ud"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_hjpfc"]
 bounce = 0.4
@@ -79,6 +80,21 @@ tracks/4/keys = {
 "update": 0,
 "values": [Vector2(1, 1), Vector2(2.07, 2.07)]
 }
+tracks/5/type = "audio"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("AudioStreamPlayer2D")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("5_rj5ud")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/5/use_blend = true
 
 [sub_resource type="Animation" id="Animation_f3pl5"]
 length = 0.001
@@ -180,6 +196,7 @@ script = ExtResource("1_fm8pm")
 shape = SubResource("CircleShape2D_ub1cn")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("1_sv3lq")
 
@@ -188,11 +205,13 @@ collision_layer = 16
 collision_mask = 7
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ExplosionRadius"]
+scale = Vector2(2.07, 2.07)
 shape = SubResource("CircleShape2D_u5on8")
 disabled = true
 debug_color = Color(0.70505, 0.462269, 0.441109, 0.42)
 
 [node name="Explosion" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0)
 texture = ExtResource("3_5cobf")
 hframes = 8
 vframes = 8
@@ -208,6 +227,9 @@ libraries = {
 "": SubResource("AnimationLibrary_uqbcn")
 }
 autoplay = "Red Blinking Light"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+volume_db = -10.0
 
 [connection signal="body_entered" from="ExplosionRadius" to="." method="_on_explosion_radius_body_entered"]
 [connection signal="body_exited" from="ExplosionRadius" to="." method="_on_explosion_radius_body_exited"]
