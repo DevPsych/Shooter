@@ -500,7 +500,8 @@ position = Vector2(-1190, 2783)
 position = Vector2(-1359, 3431)
 
 [node name="Player" parent="." index="9"]
-position = Vector2(-570, 2014)
+position = Vector2(5501, 2360)
+rotation = -3.11435
 
 [node name="CarPath" type="Path2D" parent="." index="12"]
 position = Vector2(-1151, 539)
