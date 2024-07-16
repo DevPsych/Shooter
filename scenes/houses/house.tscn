@@ -134,7 +134,6 @@ rotation = -1.5708
 
 [node name="Containers" type="Node2D" parent="."]
 metadata/_edit_lock_ = true
-metadata/_edit_group_ = true
 
 [node name="Box" parent="Containers" instance=ExtResource("19_e73ui")]
 position = Vector2(1187, -585)
@@ -159,6 +158,9 @@ rotation = 1.5708
 [node name="Toilet2" parent="Containers" instance=ExtResource("20_bg2u6")]
 position = Vector2(-308, -754)
 rotation = 1.5708
+
+[node name="Box5" parent="Containers" instance=ExtResource("19_e73ui")]
+position = Vector2(114, 631)
 
 [node name="Lights" type="Node2D" parent="."]
 metadata/_edit_lock_ = true
